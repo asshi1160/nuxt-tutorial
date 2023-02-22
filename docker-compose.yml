@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  nuxt:
+    container_name: nuxt-tutorial
+    image: node:18-alpine
+    ports:
+      - 3000:3000
+    volumes:
+      - ./tutorial-app:/tutorial-app
+    command: >
+      sh -c "
+        if [ ! -e node_modules ]; then
+          yarn install
+        fi
+        yarn dev"
+    working_dir: /tutorial-app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - HOST=0.0.0.0
