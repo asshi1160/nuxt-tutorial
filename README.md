@@ -1,8 +1,4 @@
 # Nuxt 3 tutorial
-## Setup
-```
-./setup.sh
-```
 ## Start
 ```
 docker-compose up -d
